@@ -57,7 +57,11 @@
     <h1>projects</h1>
     <section>
         <h2>Some Ongoing Projects</h2>
-        <div class="project" id="project1">
+        <input type="radio" name="project" id="project1" checked>
+        <label for="project1" class="btn_one">Project 1</label>
+        <input type="radio" name="project" id="project2">
+        <label for="project2" class="btn_two">Project 2</label>
+        <div class="project" id="project1_content">
             <p>
                 Project 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </p>
@@ -67,7 +71,7 @@
                 <div><i class="fas fa-circle"></i>&nbsp;Javascript</div>
             </div>
         </div>
-        <div class="project" id="project2" style="display: none;">
+        <div class="project" id="project2_content">
             <p>
                 Project 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </p>
@@ -77,8 +81,6 @@
                 <div><i class="fas fa-circle"></i>&nbsp;MongoDB</div>
             </div>
         </div>
-        <button class="btn_one" onclick="showProject(1)">Project 1</button>
-        <button class="btn_two" onclick="showProject(2)">Project 2</button>
     </section>
     </div>
     <div id="about_container" class="container">
