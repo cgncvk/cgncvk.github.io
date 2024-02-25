@@ -53,21 +53,33 @@
         </table>
     </div>
     <div id="work_container" class="container">
-        <div onclick="closework()"><i class="fas fa-angle-right"></i></div>
-        <h1>projects</h1>
-        <section>
-            <h2>Some Ongoing Projects</h2>
+    <div onclick="closework()"><i class="fas fa-angle-right"></i></div>
+    <h1>projects</h1>
+    <section>
+        <h2>Some Ongoing Projects</h2>
+        <div class="project" id="project1">
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Project 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </p>
-            <div id="used">
+            <div id="used1">
                 <div><i class="fas fa-circle"></i>&nbsp;HTML5</div>
                 <div><i class="fas fa-circle"></i>&nbsp;CSS3</div>
                 <div><i class="fas fa-circle"></i>&nbsp;Javascript</div>
             </div>
-            <button class="btn_one">button 1</button>
-            <button class="btn_two">button 2</button>
-        </section>
+        </div>
+        <div class="project" id="project2" style="display: none;">
+            <p>
+                Project 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <div id="used2">
+                <div><i class="fas fa-circle"></i>&nbsp;React.js</div>
+                <div><i class="fas fa-circle"></i>&nbsp;Node.js</div>
+                <div><i class="fas fa-circle"></i>&nbsp;MongoDB</div>
+            </div>
+        </div>
+        <button class="btn_one" onclick="showProject(1)">Project 1</button>
+        <button class="btn_two" onclick="showProject(2)">Project 2</button>
+    </section>
     </div>
     <div id="about_container" class="container">
             <div onclick="closeabout()"><i class="fas fa-angle-left"></i></div>
