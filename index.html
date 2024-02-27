@@ -10,21 +10,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="index.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Selector</title>
-    <style>
-        /* Your CSS code here */
-        /* Hide project content by default */
-        .project {
-            display: none;
-        }
-
-        /* Show project content when radio button is checked */
-        input[type="radio"]:checked + label + .project {
-            display: block;
-        }
-    </style>    
 </head>
 <body>
     <div id="loading">
@@ -68,36 +53,48 @@
         </table>
     </div>
     <div id="work_container" class="container">
-        <div onclick="closework()"><i class="fas fa-angle-right"></i></div>
-        <h1>projects</h1>
-        <section>
-            <h2>Some Ongoing Projects</h2>
-            <input type="radio" name="project" id="project1" checked>
-            <label for="project1" class="btn_one">Project 1</label>
-            <input type="radio" name="project" id="project2">
-            <label for="project2" class="btn_two">Project 2</label>
-            <div class="project" id="project1_content">
-                <p>
-                    Project 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
-                <div id="used1">
-                    <div><i class="fas fa-circle"></i>&nbsp;HTML5</div>
-                    <div><i class="fas fa-circle"></i>&nbsp;CSS3</div>
-                    <div><i class="fas fa-circle"></i>&nbsp;Javascript</div>
-                </div>
+    <div onclick="closework()"><i class="fas fa-angle-right"></i></div>
+    <h1>projects</h1>
+    <section>
+        <h2>Some Ongoing Projects</h2>
+        <button class="btn_one" onclick="showProject('project1_content')">Project 1</button>
+        <button class="btn_two" onclick="showProject('project2_content')">Project 2</button>
+        <div class="project" id="project1_content">
+            <p>
+                Project 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <div id="used1">
+                <div><i class="fas fa-circle"></i>&nbsp;HTML5</div>
+                <div><i class="fas fa-circle"></i>&nbsp;CSS3</div>
+                <div><i class="fas fa-circle"></i>&nbsp;Javascript</div>
             </div>
-            <div class="project" id="project2_content">
-                <p>
-                    Project 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
-                <div id="used2">
-                    <div><i class="fas fa-circle"></i>&nbsp;React.js</div>
-                    <div><i class="fas fa-circle"></i>&nbsp;Node.js</div>
-                    <div><i class="fas fa-circle"></i>&nbsp;MongoDB</div>
-                </div>
+        </div>
+        <div class="project" id="project2_content">
+            <p>
+                Project 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <div id="used2">
+                <div><i class="fas fa-circle"></i>&nbsp;React.js</div>
+                <div><i class="fas fa-circle"></i>&nbsp;Node.js</div>
+                <div><i class="fas fa-circle"></i>&nbsp;MongoDB</div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
+</div>
+
+<script>
+    function showProject(projectId) {
+        // Hide all projects
+        var projects = document.querySelectorAll('.project');
+        for (var i = 0; i < projects.length; i++) {
+            projects[i].style.display = 'none';
+        }
+        
+        // Show the selected project
+        var selectedProject = document.getElementById(projectId);
+        selectedProject.style.display = 'block';
+    }
+</script>
     <div id="about_container" class="container">
             <div onclick="closeabout()"><i class="fas fa-angle-left"></i></div>
             <h1>about</h1>
