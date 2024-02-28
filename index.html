@@ -83,13 +83,13 @@
     </div>
 <script>
     function showProject(projectId) {
-        // Hide all projects
+        // Hide all project details
         var projects = document.querySelectorAll('.project');
-        for (var i = 0; i < projects.length; i++) {
-            projects[i].style.display = 'none';
-        }
-        
-        // Show the selected project
+        projects.forEach(function(project) {
+            project.style.display = 'none';
+        });
+
+        // Show the selected project details
         var selectedProject = document.getElementById(projectId);
         selectedProject.style.display = 'block';
     }
