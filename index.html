@@ -61,7 +61,24 @@
         }
     </style>
 </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Works</title>
+    <!-- Add any CSS links or stylesheets here -->
+    <style>
+        .project {
+            display: none; /* Hide all project details by default */
+        }
+        .selected {
+            background-color: lightblue; /* Change the background color of the selected button */
+        }
+    </style>
+</head>
 <body>
+
 <div id="work_container" class="container">
     <div onclick="closework()"><i class="fas fa-angle-right"></i></div>
     <h1>works.</h1>
@@ -100,20 +117,24 @@
             project.style.display = 'none';
         });
 
-        // Show the selected project details
-        var selectedProject = document.getElementById(projectId);
-        selectedProject.style.display = 'block';
-
         // Remove 'selected' class from all buttons
         var buttons = document.querySelectorAll('.btn_one, .btn_two');
         buttons.forEach(function(btn) {
             btn.classList.remove('selected');
         });
 
+        // Show the selected project details
+        var selectedProject = document.getElementById(projectId);
+        selectedProject.style.display = 'block';
+
         // Add 'selected' class to the clicked button
         button.classList.add('selected');
     }
 </script>
+
+<!-- Add any necessary JavaScript libraries or scripts here -->
+</body>
+</html>
     <div id="about_container" class="container">
             <div onclick="closeabout()"><i class="fas fa-angle-left"></i></div>
             <h1>about</h1>
