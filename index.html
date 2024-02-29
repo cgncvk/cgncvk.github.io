@@ -52,6 +52,16 @@
     </tr>
         </table>
     </div>
+<style>
+        .project {
+            display: none; /* Hide all project details by default */
+        }
+        .selected {
+            background-color: lightblue; /* Change the background color of the selected button */
+        }
+    </style>
+</head>
+<body>
 <div id="work_container" class="container">
     <div onclick="closework()"><i class="fas fa-angle-right"></i></div>
     <h1>works.</h1>
@@ -65,8 +75,8 @@
             <div><i class="fas fa-circle"></i>&nbsp;CSS3</div>
             <div><i class="fas fa-circle"></i>&nbsp;Javascript</div>
         </div>
-        <button class="btn_one" onclick="showProject('project1_content')">Show Project 1</button>
-        <button class="btn_two" onclick="showProject('project2_content')">Show Project 2</button>
+        <button class="btn_one" onclick="showProject('project1_content', this)">Show Project 1</button>
+        <button class="btn_two" onclick="showProject('project2_content', this)">Show Project 2</button>
     </section>
     <div class="project" id="project1_content">
         <h2>Project 1</h2>
@@ -83,7 +93,7 @@
 </div>
 
 <script>
-    function showProject(projectId) {
+    function showProject(projectId, button) {
         // Hide all project details
         var projects = document.querySelectorAll('.project');
         projects.forEach(function(project) {
@@ -93,6 +103,15 @@
         // Show the selected project details
         var selectedProject = document.getElementById(projectId);
         selectedProject.style.display = 'block';
+
+        // Remove 'selected' class from all buttons
+        var buttons = document.querySelectorAll('.btn_one, .btn_two');
+        buttons.forEach(function(btn) {
+            btn.classList.remove('selected');
+        });
+
+        // Add 'selected' class to the clicked button
+        button.classList.add('selected');
     }
 </script>
     <div id="about_container" class="container">
